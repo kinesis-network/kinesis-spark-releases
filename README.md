@@ -10,6 +10,14 @@ Run it on the **image PC only**, with the freeze / diskless protection **OFF**.
    `[Net.ServicePointManager]::SecurityProtocol = 'Tls12'; irm https://github.com/kinesis-network/kinesis-spark-releases/releases/latest/download/venue-setup.ps1 -OutFile venue-setup.ps1`
 3. Run `powershell -ExecutionPolicy Bypass -File .\venue-setup.ps1`. It asks for the token, then does the whole setup and stops at the first problem, saying what to fix.
 4. If it asks for a restart: restart the PC (Start > Power > Restart), then run the same command again. It continues where it stopped.
-5. It waits for you three times: paste the two CafePlus lines on the register PC, test a rent and a lock, then type the confirmations that prepare the image and delete the kit. Save the image, then turn the protection back **ON**.
+5. It waits for you three times: set up the hook on the register PC ("Hook setup" below; step 7 links the page and checks this PC), test a rent and a lock, then type the confirmations that prepare the image and delete the kit. Save the image, then turn the protection back **ON**.
 
 To repeat or repair one step: add `-Step <n>`. `-Help` lists the steps. The internet must work throughout; Spark and its engine update themselves.
+
+## Hook setup
+
+The cafe software tells Spark when a customer sits down and when they leave, so Spark stops the moment a PC is rented. Pick your cafe software:
+
+- [AKINSOFT CafePlus](https://github.com/kinesis-network/kinesis-spark-releases/blob/main/hooks/cafeplus.md)
+
+Another cafe software? Contact Kinesis.
