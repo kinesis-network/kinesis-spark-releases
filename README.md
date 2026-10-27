@@ -1,3 +1,5 @@
+**English** | [Türkçe](https://github.com/kinesis-network/kinesis-spark-releases/blob/main/README.tr.md)
+
 # Kinesis Spark venue kit
 
 Sets up Spark on an internet cafe's Windows image, so every PC that boots the image earns while no customer sits at it.
