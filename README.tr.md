@@ -1,6 +1,6 @@
 [English](https://github.com/kinesis-network/kinesis-spark-releases/blob/main/README.md) | **Türkçe**
 
-# Kinesis Spark kafe kiti
+# Kinesis Spark disksiz kafe kiti
 
 Spark'ı internet kafenin Windows imajına kurar; böylece imajla açılan her PC, başında müşteri yokken kazanç sağlar.
 Yalnızca **imaj PC'sinde**, dondurma / disksiz yazma koruması **KAPALIYKEN** çalıştırın.
