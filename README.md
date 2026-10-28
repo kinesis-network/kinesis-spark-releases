@@ -1,58 +1,63 @@
 **English** | [Türkçe](https://github.com/kinesis-network/kinesis-spark-releases/blob/main/README.tr.md)
 
-# Dynamo Spark releases
+# Earn with your internet cafe's PCs
 
-Dynamo Spark lets a Windows PC earn while nobody is using it. This is where its installer is published.
+Kinesis rents out the graphics cards of your cafe PCs to people who need computing power, but only while no customer is using them. You earn for those hours. The moment a customer sits down, it stops and the PC is all theirs. The program that does this on each PC is called **Spark**.
 
-## Install
+This guide sets it up for your whole cafe at once. You do it one time.
 
-1. Download the Spark installer from **[the latest release](https://github.com/kinesis-network/kinesis-spark-releases/releases/latest)**: the file `spark-ui_windows_x64_v….exe`.
-2. Run it and follow the screens.
+## Before you start
 
-## Internet cafe with a diskless image (CCBoot and similar)
+- **About 30 minutes**, and internet on the PC you work on.
+- **Your PCs start from a server** (a "diskless" system such as CCBoot): the PCs have no Windows of their own; they all start one shared copy of Windows, called the **image**, from your server. If your PCs have their own disks, this guide is not for you: just download the installer from step 4 and run it on each PC.
+- **Supported cafe software** on your cashier PC: see the [list below](#supported-cafe-software).
 
-Spark is installed **once, into the shared image**; every PC that boots the image then runs it.
+## Step by step
 
-### Requirements
+1. **Create your Kinesis account.** Go to [portal.kinesis.network/signup](https://portal.kinesis.network/signup) and sign up with the cafe's own email. This website is your Kinesis account: your PCs and earnings show there. In the menu, click **Provide**, read the terms, tick the box and click **Agree & start providing**.
+2. **Set up your cafe software.** On the cashier PC, add two lines to your cafe software so it tells Spark when a customer starts and leaves. Follow the page for your software in the [list below](#supported-cafe-software).
+3. **Open the image for editing.** Start one PC in your diskless system's edit mode, with write protection off (CCBoot: start it as **Super Client**; other diskless systems have the same thing under another name). Sign in to Windows. Everything below happens on this PC.
+4. **Download and run the installer.** From the [latest release](https://github.com/kinesis-network/kinesis-spark-releases/releases/latest), download the file `spark-ui_windows_x64_v….exe` and run it. Leave **Launch Dynamo** ticked at the end.
+   You should see: the Spark window.
+5. **Choose the cafe setup.** On Spark's first screen, click the small link **Setting up a diskless venue image (CCBoot...)? Click here**. Read the page, click **Continue venue setup** and say yes to the Windows prompt. Then click each button as it appears. If Windows asks to restart, that's fine: Spark comes back where it was.
+   You should see: the cafe setup, marked **Install**. (If this image already has Spark, it shows **Update** instead.)
+6. **Connect your account.** At **Connect to Kinesis**, click **Connect through the Portal**. Your Kinesis account opens in the browser: sign in and click **Authorize for this image**.
+   You should see: **Connected** in Spark. Every PC that starts from this image will appear in this account.
+   <details><summary>Can't sign in on this PC?</summary>
 
-- [ ] **A diskless system.** The cafe's PCs boot one shared Windows image from a server (diskless boot software such as **CCBoot**). Anything changed on an ordinary PC is lost at its next restart, so every change is made **once, on the image**, on a PC booted in the boot software's image edit mode (in CCBoot: **Super Client**), with write protection off. Then the image is saved and every PC gets it at its next boot. This page calls that PC the **image PC**.
-- [ ] **Internet** on the image PC, the whole time.
-- [ ] **A 1-year venue token** from the venue's **own** Portal account (not the account of whoever is helping): every PC that boots the image joins the account the token was made in. The setup can also fetch it for you (**Connect through the Portal**).
-- [ ] **Access to the register PC**, for the [CafePlus settings](https://github.com/kinesis-network/kinesis-spark-releases/blob/main/hooks/cafeplus.md).
-- [ ] **Virtualization on** in the BIOS (SVM / VT-x), on every PC.
-- [ ] For GPU PCs, **the NVIDIA driver comes from the diskless system**; do not install a driver into the image yourself.
+   Use a code instead. On any other computer, sign in to your Kinesis account and go to **Provide** > **Fleet** > **Add machines** > **Windows / WSL**. Click the small link **Setting up a diskless venue image (CCBoot and similar)? Get a 1-year venue token**, then **Create venue token**, then the copy button. Get the code to this PC. In Spark, click **Paste a token instead**, paste it and click **Use this token**. The code works for one year.
 
-### Setup
+   Make the code in **your own** account, not the account of someone helping you: every PC joins the account the code came from, and that account gets the earnings. After saving the image, never press **Regenerate** on that page: PCs that have not joined yet could no longer join.
+   </details>
+7. **Prepare and save.** Go through the last screens. At the end, click **Prepare this PC for saving the image** and answer **Yes**. Then, within 1 hour and without using this PC: shut it down, save the image in your diskless system the way you always do, and turn write protection back on.
+8. **Check that it works.** Start one cafe PC as usual. Within a few minutes, it appears in your Kinesis account under **Provide** > **Fleet**. Open a customer session on it from the cashier PC: Spark stops within about 20 seconds. Lock it again: Spark goes back to work within about a minute.
 
-1. **Register PC:** set the two CafePlus boxes once: [AKINSOFT CafePlus](https://github.com/kinesis-network/kinesis-spark-releases/blob/main/hooks/cafeplus.md).
-2. **Image PC:** boot it in image edit mode (CCBoot: Super Client), protection off, and sign in to Windows.
-3. Download and run the Spark installer (above). Leave **Launch Dynamo** on at the end.
-4. On Spark's first setup step, click the small link **Setting up a diskless venue image (CCBoot...)? Click here**, read the page, click **Continue venue setup** and approve the one administrator prompt.
-5. Follow the wizard. A new image shows **Install**; an image that already has Spark opens on **Update**. A restart, if asked, is safe: the window comes back where it was.
-6. **The token**, at **Connect to Kinesis**: click **Connect through the Portal** and sign in with the venue's own account, or click **Paste a token instead**. To get a token in the Portal: **Provide** > **Fleet** > **Add machines** > **Windows / WSL** > the small link **Setting up a diskless venue image (CCBoot and similar)? Get a 1-year venue token** > **Create venue token** > the copy button.
-   After imaging, never press **Regenerate** on that page: PCs that have not joined yet could no longer join.
-7. **Ready to save:** click **Prepare this PC for saving the image** and answer **Yes**.
-8. Within 1 hour, without using the PC for anything else: shut it down, save the image in the boot software (CCBoot: the way you always save it), and turn write protection back on.
+Done. To update later, repeat steps 3 and 4: Spark opens on **Update this venue image** by itself, and every PC keeps its place in your account.
 
-To update the image later (new Spark or new token): do steps 2 and 3 again; Spark opens on **Update this venue image** by itself. Every PC keeps its place in the Portal.
+## Supported cafe software
 
-### After saving: check one PC
+<!-- Maintainers: to support new cafe software, add one row here (and the same row in README.tr.md),
+     plus hooks/<software>.md and hooks/<software>.tr.md written like hooks/cafeplus.md.
+     Nothing else in this README needs to change. -->
 
-Boot one cafe PC from the saved image. Within a few minutes it shows in the Portal under **Provide** > **Fleet**. Rent it from the register: Spark stops within about 20 seconds; lock it: Spark works again within about a minute.
+| Cafe software | Setup page |
+|---|---|
+| AKINSOFT CafePlus | [English](https://github.com/kinesis-network/kinesis-spark-releases/blob/main/hooks/cafeplus.md) · [Türkçe](https://github.com/kinesis-network/kinesis-spark-releases/blob/main/hooks/cafeplus.tr.md) |
 
-If it does not show up, open **Command Prompt** as administrator on that PC and run:
+Using different cafe software? Email **support@kinesis.network** and we'll add it.
+
+## If something goes wrong
+
+<details><summary>A PC does not show up in your account</summary>
+
+On that PC, open Start, type `cmd`, right-click **Command Prompt** and choose **Run as administrator**. Run these two lines:
 
 ```
 "C:\Program Files\Dynamo\Dynamo.Spark.WinService.exe" status
 "C:\Program Files\Dynamo\Dynamo.Spark.WinService.exe" venue doctor
 ```
 
-`venue doctor` lists each stage of the PC's boot; the first line that is not fine is where it is stuck. Send both outputs and the PC's name to Kinesis.
+Send what they show, and the PC's name, to **support@kinesis.network**.
+</details>
 
-## Help
-
-**support@kinesis.network**. Tell us the venue and the PC's name: Kinesis sees the setup in its own logs.
-
-Another cafe software than CafePlus? Contact us first.
-
-> The old "Kinesis Spark diskless venue kit" (the PowerShell line and `venue-setup.ps1`) is retired; its releases are no longer used. Use the installer above.
+> The old "Kinesis Spark diskless venue kit" (a PowerShell script) is retired. Use the installer above.
