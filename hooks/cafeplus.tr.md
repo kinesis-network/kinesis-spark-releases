@@ -2,25 +2,35 @@
 
 # Kanca (hook) kurulumu: AKINSOFT CafePlus
 
-Bir kez, **kasa PC'sinde** yapılır, imaj PC'sinde değil. CafePlus bu ayarları kafedeki her PC'ye gönderir.
+CafePlus, müşteri PC'ye oturduğunda ve kalktığında Spark'a haber verir; böylece PC kiralandığı anda Spark durur. **Bir kez, kasa PC'sinde** yapılır, imaj PC'sinde değil; CafePlus bu ayarları kafedeki her PC'ye gönderir.
 
-1. **Client Ayarları** > **Açma Kapama Scripti** bölümünü açın.
-2. Üstteki kutuya, **Client kullanıma açılırken çalıştırılacak kod satırı** (müşteri oturumu başlarken), tam olarak şunu yapıştırın:
+1. **Betik ayarlarını açın.** Kasa PC'sinde CafePlus'ta: **Client Ayarları** > **Açma Kapama Scripti**.
+   Görmeniz gereken: iki kutu, **Client kullanıma açılırken çalıştırılacak kod satırı** (üstte) ve **Client kilitlenirken çalıştırılacak kod satırı** (altta).
+
+2. **Üstteki kutu** (müşteri oturumu başlarken): tam olarak bu tek satırı yapıştırın.
 
    ```
    if exist "C:\Program Files\Dynamo\Dynamo.Spark.WinService.exe" "C:\Program Files\Dynamo\Dynamo.Spark.WinService.exe" venue occupied --no-wait --no-window
    ```
 
-3. Alttaki kutuya, **Client kilitlenirken çalıştırılacak kod satırı** (müşteri kalkınca), tam olarak şunu yapıştırın:
+3. **Alttaki kutu** (PC kilitlenince, müşteri kalkınca): tam olarak bu tek satırı yapıştırın.
 
    ```
    if exist "C:\Program Files\Dynamo\Dynamo.Spark.WinService.exe" "C:\Program Files\Dynamo\Dynamo.Spark.WinService.exe" venue vacant --no-wait --no-window
    ```
 
-4. Kaydedin. Her kutuya yalnızca bir satır, başka bir şey yok. Yolu yazıldığı gibi bırakın: asla `%ProgramFiles%` kullanmayın (CafePlus satırları 32 bit `cmd` ile çalıştırır; orada bu değişken `C:\Program Files (x86)` demektir).
+4. **Kaydedin.**
+   Görmeniz gereken: her kutuda yalnızca bir satır var, başka bir şey yok ve yol `C:\Program Files\Dynamo` olarak açık yazılı (asla `%ProgramFiles%` değil: CafePlus satırları 32 bit `cmd` ile çalıştırır; orada bu değişken `C:\Program Files (x86)` demektir).
 
-**Ne zaman geçerli olur:** bir client PC kutuları yalnızca CafePlus istemcisi başlarken alır; pratikte bir sonraki açılışta. Bir PC'nin kutuları hemen almasını isterseniz (bu, o PC'deki oturumu bitirir; PC kilit ekranına döner): o PC'nin CafePlus penceresinde **Yetkili** sekmesinde **Programdan Çık** düğmesine tıklayın, ardından `C:\Program Files (x86)\AKINSOFT\CafePlusClient12\cplusc.exe` dosyasını yeniden başlatın. Sonraki kiralama veya kilitleme, kutunun satırını o PC'nin `script.cmd` dosyasına yazar.
+5. **Bir sonraki açılışı bekleyin.** Her PC kutuları CafePlus istemcisi başlarken, yani bir sonraki açılışta alır. Spark olmayan PC'ler aynı satırları çalıştırır ve hiçbir şey yapmaz (`if exist` kısmı onları atlar).
 
-**Spark olmayan PC'ler** aynı satırları çalıştırır ve hiçbir şey yapmaz: `if exist` kısmı onları atlar.
+6. **Spark'lı bir PC'de kontrol edin**, açılıştan sonra: PC'yi kasadan kiralayın.
+   Görmeniz gereken: Spark yaklaşık 20 saniye içinde durur. Kilitleyin: Spark yaklaşık bir dakika içinde yeniden çalışır.
 
-**Çalıştığını kontrol edin** (Spark'lı bir PC'de, yeniden başlattıktan sonra): PC'yi kasadan kiralayın; Spark yaklaşık 20 saniye içinde durur. Kilitleyin; Spark yaklaşık bir dakika içinde yeniden çalışır. Kitin 7. adımı (`-Step 7`) bu PC'nin CafePlus betiğinde satırı arar; 8. adımı (`-Step 8`) PC'yi kilitlemenizi, sonra kiralamanızı ister ve Spark'ın izlediğini kontrol eder.
+**Bir PC'nin kutuları hemen almasını isterseniz**, yeniden başlatmadan (bu, o PC'deki oturumu bitirir; PC kilit ekranına döner): o PC'nin CafePlus penceresinde **Yetkili** sekmesinde **Programdan Çık**'a tıklayın, sonra bunu yeniden başlatın:
+
+```
+C:\Program Files (x86)\AKINSOFT\CafePlusClient12\cplusc.exe
+```
+
+Sonraki kiralama veya kilitleme, kutunun satırını o PC'nin `script.cmd` dosyasına yazar; kitin 7. adımı (`-Step 7`) satırı orada arar, 8. adımı (`-Step 8`) bir kilitleme ve kiralama yaptırıp Spark'ın izlediğini kontrol eder.
