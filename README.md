@@ -4,6 +4,8 @@
 
 Kinesis rents out the graphics cards of your cafe PCs to people who need computing power, but only while no customer is using them. You earn for those hours. The moment a customer sits down, it stops and the PC is all theirs. The program that does this on each PC is called **Spark**.
 
+Curious what your PCs could earn? Try the [GPU earnings calculator](https://kinesis.network/grid/join/gpu-calculator).
+
 This guide sets it up for your whole cafe at once. You do it one time.
 
 ## Before you start
@@ -17,7 +19,7 @@ This guide sets it up for your whole cafe at once. You do it one time.
 1. **Create your Kinesis account.** Go to [portal.kinesis.network/signup](https://portal.kinesis.network/signup) and sign up with the cafe's own email. This website is your Kinesis account: your PCs and earnings show there. In the menu, click **Provide**, read the terms, tick the box and click **Agree & start providing**.
 2. **Set up your cafe software.** On the cashier PC, add two lines to your cafe software so it tells Spark when a customer starts and leaves. Follow the page for your software in the [list below](#supported-cafe-software).
 3. **Open the image for editing.** Start one PC in your diskless system's edit mode, with write protection off (CCBoot: start it as **Super Client**; other diskless systems have the same thing under another name). Sign in to Windows. Everything below happens on this PC.
-4. **Download and run the installer.** From the [latest release](https://github.com/kinesis-network/kinesis-spark-releases/releases/latest), download the file `spark-ui_windows_x64_v….exe` and run it. Leave **Launch Dynamo** ticked at the end.
+4. **Download and run the installer.** Open the [latest release](https://github.com/kinesis-network/kinesis-spark-releases/releases/latest), download the file `spark-ui_windows_x64_v….exe` and run it. (The same file is in your Kinesis account: **Provide** > **Fleet** > **Add machines** > **Windows / WSL** > **Download Dynamo Spark**.) Leave **Launch Dynamo** ticked at the end.
    You should see: the Spark window.
 5. **Choose the cafe setup.** On Spark's first screen, click the small link **Setting up a diskless venue image (CCBoot...)? Click here**. Read the page, click **Continue venue setup** and say yes to the Windows prompt. Then click each button as it appears. If Windows asks to restart, that's fine: Spark comes back where it was.
    You should see: the cafe setup, marked **Install**. (If this image already has Spark, it shows **Update** instead.)

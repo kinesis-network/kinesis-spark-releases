@@ -4,6 +4,8 @@
 
 Kinesis, kafenizdeki bilgisayarların ekran kartlarını, işlem gücüne ihtiyacı olanlara kiralar; ama yalnızca o bilgisayarda müşteri yokken. Bu saatler için siz kazanırsınız. Müşteri oturduğu anda iş durur ve bilgisayar tamamen müşterinin olur. Bunu her bilgisayarda yapan programın adı **Spark**.
 
+Bilgisayarlarınızın ne kadar kazanabileceğini merak ediyor musunuz? [GPU kazanç hesaplayıcısını](https://kinesis.network/grid/join/gpu-calculator) deneyin (İngilizce).
+
 Bu rehberle kurulumu bütün kafe için tek seferde yaparsınız. Bir kez yapmanız yeterli.
 
 ## Başlamadan önce
@@ -17,7 +19,7 @@ Bu rehberle kurulumu bütün kafe için tek seferde yaparsınız. Bir kez yapman
 1. **Kinesis hesabınızı açın.** [portal.kinesis.network/signup](https://portal.kinesis.network/signup) adresine gidin ve kafenin kendi e-postasıyla kaydolun. Bu site sizin Kinesis hesabınızdır; bilgisayarlarınızı ve kazancınızı burada görürsünüz. Site İngilizcedir. Menüde **Provide**'a (sağlayıcı bölümü) tıklayın, şartları okuyun, kutuyu işaretleyin ve **Agree & start providing**'e tıklayın.
 2. **Kafe yazılımınızı ayarlayın.** Kasa bilgisayarında, kafe yazılımınıza iki satır eklersiniz; böylece yazılım, müşteri oturduğunda ve kalktığında Spark'a haber verir. [Aşağıdaki listeden](#desteklenen-kafe-yazılımları) kendi yazılımınızın sayfasını izleyin.
 3. **İmajı düzenlemeye açın.** Bir bilgisayarı disksiz sisteminizin düzenleme modunda, yazma koruması kapalı olarak açın (CCBoot'ta **Super Client** olarak açın; diğer disksiz sistemlerde de başka adla aynı mod vardır). Windows'a giriş yapın. Bundan sonraki her şey bu bilgisayarda yapılır.
-4. **Kurulum dosyasını indirip çalıştırın.** [Son sürüm sayfasından](https://github.com/kinesis-network/kinesis-spark-releases/releases/latest) `spark-ui_windows_x64_v….exe` dosyasını indirip çalıştırın. Sonda **Launch Dynamo** işaretli kalsın.
+4. **Kurulum dosyasını indirip çalıştırın.** [Son sürüm sayfasını](https://github.com/kinesis-network/kinesis-spark-releases/releases/latest) açın, `spark-ui_windows_x64_v….exe` dosyasını indirip çalıştırın. (Aynı dosya Kinesis hesabınızda da var: **Provide** > **Fleet** > **Add machines** > **Windows / WSL** > **Download Dynamo Spark**.) Sonda **Launch Dynamo** işaretli kalsın.
    Görmeniz gereken: Spark penceresi açılır.
 5. **Kafe kurulumunu seçin.** Spark'ın ilk ekranındaki küçük bağlantıya tıklayın. Bu bağlantı ilk açılışta İngilizcedir: **Setting up a diskless venue image (CCBoot...)? Click here**. Açılan sayfanın üstündeki **TR** düğmesiyle Türkçeye geçebilirsiniz. Sayfayı okuyun, **Kafe kurulumuna devam et**'e tıklayın ve Windows'un sorusuna evet deyin. Sonra her ekranda çıkan düğmeye tıklayın. Windows yeniden başlatmak isterse sorun yok: Spark kaldığı yerden açılır.
    Görmeniz gereken: **Kurulum** yazan kafe kurulumu. (Bu imajda Spark zaten varsa **Güncelleme** yazar.)
