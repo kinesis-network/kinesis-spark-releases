@@ -33,4 +33,4 @@ CafePlus, müşteri PC'ye oturduğunda ve kalktığında Spark'a haber verir; b�
 C:\Program Files (x86)\AKINSOFT\CafePlusClient12\cplusc.exe
 ```
 
-Sonraki kiralama veya kilitleme, kutunun satırını o PC'nin `script.cmd` dosyasına yazar; kitin 7. adımı (`-Step 7`) satırı orada arar, 8. adımı (`-Step 8`) bir kilitleme ve kiralama yaptırıp Spark'ın izlediğini kontrol eder.
+Sonraki kiralama veya kilitleme, kutunun satırını o PC'nin `script.cmd` dosyasına yazar. İmaj PC'sinde Spark'ın kafe kurulumu ([kurulum sayfası](https://github.com/kinesis-network/kinesis-spark-releases/blob/main/README.tr.md)) **CafePlus kontrolü** adımında aynı iki satırı **Kopyala** düğmeleriyle gösterir, satırı orada arar ve **CafePlus istemcisini başlat** düğmesi sunar; isteğe bağlı kilitleme ve kiralama testi de Spark'ın buna uyduğunu kontrol eder.

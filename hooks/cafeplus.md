@@ -33,4 +33,4 @@ CafePlus tells Spark when a customer sits down and when they leave, so Spark sto
 C:\Program Files (x86)\AKINSOFT\CafePlusClient12\cplusc.exe
 ```
 
-The next rent or lock then writes the box's line to that PC's `script.cmd`; the kit's step 7 (`-Step 7`) looks for it there, and step 8 (`-Step 8`) runs a lock and a rent and checks that Spark follows.
+The next rent or lock then writes the box's line to that PC's `script.cmd`. On the image PC, Spark's venue setup (see the [installer page](https://github.com/kinesis-network/kinesis-spark-releases/blob/main/README.md)) shows the same two lines with **Copy** buttons at its **CafePlus check** step, looks for the line there, and has a **Start CafePlus client** button; its optional lock and rent test checks that Spark follows.
