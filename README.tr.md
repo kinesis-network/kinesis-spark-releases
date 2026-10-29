@@ -4,15 +4,16 @@
 
 Kinesis, kafenizdeki bilgisayarların ekran kartlarını, işlem gücüne ihtiyacı olanlara kiralar; ama yalnızca o bilgisayarda müşteri yokken. Bu saatler için siz kazanırsınız. Müşteri oturduğu anda iş durur ve bilgisayar tamamen müşterinin olur. Bunu her bilgisayarda yapan programın adı **Spark**.
 
-Bilgisayarlarınızın ne kadar kazanabileceğini merak ediyor musunuz? [GPU kazanç hesaplayıcısını](https://kinesis.network/grid/join/gpu-calculator) deneyin (İngilizce).
+Bilgisayarlarınızın ne kadar kazanabileceğini merak ediyor musunuz? [GPU kazanç hesaplayıcısını](https://kinesis.network/grid/join/gpu-calculator) deneyin.
 
 Bu rehberle kurulumu bütün kafe için tek seferde yaparsınız. Bir kez yapmanız yeterli.
 
 ## Başlamadan önce
 
-- **Yaklaşık 30 dakika** ve üzerinde çalışacağınız bilgisayarda internet.
-- **Bilgisayarlarınız sunucudan açılıyor olmalı** (CCBoot gibi "disksiz" bir sistem): bilgisayarların kendi Windows'u yoktur, hepsi sunucudaki tek bir ortak Windows kopyasıyla, yani **imajla** açılır. Bilgisayarlarınızın kendi diski varsa bu rehber size göre değil: 4. adımdaki kurulum dosyasını indirip her bilgisayarda çalıştırmanız yeterli.
-- Kasa bilgisayarında **desteklenen bir kafe yazılımı**: [aşağıdaki listeye](#desteklenen-kafe-yazılımları) bakın.
+* Yaklaşık 30 dakikanızı ayırın. Üzerinde çalışacağınız bilgisayarın internet bağlantısı olduğundan emin olun.
+* Windows imajları açma, düzenleme, kaydetme ve sistemdeki bilgisayarlara dağıtma yetkiniz olduğundan emin olun.
+* Bilgisayarlarınızın sunucudan, ortak bir Windows imajıyla açıldığından emin olun (CCBoot gibi disksiz bir sistem). Bilgisayarlarınızın kendi diski varsa 4. adımdaki kurulum dosyasını her bilgisayarda çalıştırmanız yeterli.
+* Kasa bilgisayarınızda desteklenen bir kafe yazılımı olduğundan emin olun: [aşağıdaki listeye](#desteklenen-kafe-yazılımları) bakın.
 
 ## Adım adım
 
@@ -61,5 +62,3 @@ O bilgisayarda Başlat'a `cmd` yazın, **Komut İstemi**'ne sağ tıklayın ve *
 
 Çıkan yazıları ve bilgisayarın adını **support@kinesis.network** adresine gönderin.
 </details>
-
-> Eski "Kinesis Spark disksiz kafe kiti" (bir PowerShell betiği) kullanımdan kaldırıldı. Yukarıdaki kurulum dosyasını kullanın.

@@ -10,9 +10,10 @@ This guide sets it up for your whole cafe at once. You do it one time.
 
 ## Before you start
 
-- **About 30 minutes**, and internet on the PC you work on.
-- **Your PCs start from a server** (a "diskless" system such as CCBoot): the PCs have no Windows of their own; they all start one shared copy of Windows, called the **image**, from your server. If your PCs have their own disks, this guide is not for you: just download the installer from step 4 and run it on each PC.
-- **Supported cafe software** on your cashier PC: see the [list below](#supported-cafe-software).
+* Set aside about 30 minutes. Make sure the PC you work on has internet.
+* Make sure you can open, edit and save your Windows image and send it to the PCs in your system.
+* Make sure your PCs start from a server with one shared Windows image (a diskless system such as CCBoot). If your PCs have their own disks, just run the installer from step 4 on each PC.
+* Make sure your cashier PC runs supported cafe software: see the [list below](#supported-cafe-software).
 
 ## Step by step
 
@@ -61,5 +62,3 @@ On that PC, open Start, type `cmd`, right-click **Command Prompt** and choose **
 
 Send what they show, and the PC's name, to **support@kinesis.network**.
 </details>
-
-> The old "Kinesis Spark diskless venue kit" (a PowerShell script) is retired. Use the installer above.
