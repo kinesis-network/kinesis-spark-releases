@@ -6,7 +6,7 @@ Bu, [kurulum rehberinin](https://github.com/kinesis-network/kinesis-spark-releas
 
 Bunu **bir kez, kasa bilgisayarında** yaparsınız. CafePlus ayarı kafedeki bütün bilgisayarlara kendisi dağıtır.
 
-1. **Script ayarlarını açın.** Kasa bilgisayarında CafePlus'ta **Client Ayarları** > **Açma Kapama Scripti** bölümüne girin.
+1. **Script ayarlarını açın.** Kasa bilgisayarında CafePlus'ta **Ayarlar** > **Client Ayarları** > **Açma Kapama Scripti** bölümüne girin.
    Görmeniz gereken: iki kutu; üstte **Client kullanıma açılırken çalıştırılacak kod satırı**, altta **Client kilitlenirken çalıştırılacak kod satırı**.
 
 2. **Üstteki kutu** (müşteri oturumu başlarken çalışır): bu satırı kopyalayıp olduğu gibi yapıştırın.

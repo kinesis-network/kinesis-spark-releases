@@ -6,7 +6,7 @@ This is step 2 of the [setup guide](https://github.com/kinesis-network/kinesis-s
 
 You do this **once, on the cashier (kasa) PC**. CafePlus passes the setting to every PC in the cafe by itself.
 
-1. **Open the script settings.** In CafePlus on the cashier PC, go to **Client Ayarları** > **Açma Kapama Scripti** (the open / close script).
+1. **Open the script settings.** In CafePlus on the cashier PC, go to **Ayarlar** > **Client Ayarları** > **Açma Kapama Scripti** (the open / close script).
    You should see: two boxes, **Client kullanıma açılırken çalıştırılacak kod satırı** (top) and **Client kilitlenirken çalıştırılacak kod satırı** (bottom).
 
 2. **Top box** (runs when a customer starts): copy this line and paste it in, exactly as it is.
